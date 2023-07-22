@@ -13,6 +13,23 @@
 <h1> 오늘 점심은 뭘 먹을까? </h1>
 </p>
 
+<script>
+    var x=document.getElementByld("demo");
+    function getLocation(){
+        if (navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(showPosition);
+        }else{
+            x.innerHTML="Geolocation is not supported by this brower.";
+        }
+    }
+    function showPosition(position){
+        x.innerHTML="Latitude:"+position.coords.latitude+ 
+            "<br/> Longitude:"+position.coords.longitude;
+    }
+
+</script>
+            
+    
     <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=njovofn23o">
         
     </script>
