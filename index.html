@@ -78,16 +78,25 @@ function displayMarker(locPosition, message) {
         removable : iwRemoveable
     });
     
-    // 인포윈도우를 마커위에 표시합니다 
-    infowindow.open(map, marker);
-    
-    // 지도 중심좌표를 접속위치로 변경합니다
-    map.setCenter(locPosition);      
+
 }    
 
 
 
 
+
+	
+	
+
+function locationLoadSuccess(pos){
+    // 현재 위치 받아오기
+    var currentPos = new kakao.maps.LatLng(lat,lon);
+
+    // 지도 이동(기존 위치와 가깝다면 부드럽게 이동)
+    map.panTo(currentPos);
+
+
+	
 	
    // 장소 검색 객체를 생성합니다
 var ps = new kakao.maps.services.Places(map); 
