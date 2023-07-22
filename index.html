@@ -35,22 +35,21 @@ if (navigator.geolocation) {
         
         var lat = position.coords.latitude, // 위도
             lon = position.coords.longitude; // 경도
-        
-        var locPosition = new kakao.maps.LatLng(lat, lon)
-      });
-    
-} else { // HTML5의 GeoLocation을 사용할 수 없을때 마커 표시 위치와 인포윈도우 내용을 설정합니다
-    
-    var locPosition = new kakao.maps.LatLng(33.450701, 126.570667)
-}
 
+var mapContainer = document.getElementById('map'),
+	mapOption = {
+		center : new kakao.maps.Latlang(lat,lon), level : 4
+	};
 
+	    
 	
 	
 
 // 장소 검색 객체를 생성합니다
 var ps = new kakao.maps.services.Places(map); 
 
+var infowindow = new kakao.maps.InfoWindow([zIndex:1});
+	    
 // 카테고리로 은행을 검색합니다
 ps.categorySearch('FD6', placesSearchCB, {useMapBounds:true}); 
 
