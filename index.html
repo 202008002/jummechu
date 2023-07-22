@@ -60,29 +60,6 @@ if (navigator.geolocation) {
     displayMarker(locPosition, message);
 }
 
-// 지도에 마커와 인포윈도우를 표시하는 함수입니다
-function displayMarker(locPosition, message) {
-
-    // 마커를 생성합니다
-    var marker = new kakao.maps.Marker({  
-        map: map, 
-        position: locPosition
-    }); 
-    
-    var iwContent = message, // 인포윈도우에 표시할 내용
-        iwRemoveable = true;
-
-    // 인포윈도우를 생성합니다
-    var infowindow = new kakao.maps.InfoWindow({
-        content : iwContent,
-        removable : iwRemoveable
-    });
-    
-
-}    
-
-
-
 
 
 	
@@ -95,14 +72,18 @@ function locationLoadSuccess(pos){
     // 지도 이동(기존 위치와 가깝다면 부드럽게 이동)
     map.panTo(currentPos);
 
-
+	
 	
 	
    // 장소 검색 객체를 생성합니다
 var ps = new kakao.maps.services.Places(map); 
 
 // 카테고리로 은행을 검색합니다
-ps.categorySearch('BK9', placesSearchCB, {useMapBounds:true}); 
+ps.keywordSearch('맛집', placesSearchCB, {
+    radius : 2000,
+    location: new kakao.maps.LatLng(lan,lon)
+}); 
+	
 
 // 키워드 검색 완료 시 호출되는 콜백함수 입니다
 function placesSearchCB (data, status, pagination) {
