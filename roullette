@@ -1,3 +1,71 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<title> 점메추, 직장인 점심메뉴 룰렛 </title>
+</head>
+        
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<body>
+<p>
+<h1> 오늘 점심은 뭘 먹을까? </h1>
+</p>
+
+<script>
+    var x=document.getElementByld("demo");
+    function getLocation(){
+        if (navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(showPosition);
+        }else{
+            x.innerHTML="Geolocation is not supported by this brower.";
+        }
+    }
+    function showPosition(position){
+        x.innerHTML="Latitude:"+position.coords.latitude+ 
+            "<br/> Longitude:"+position.coords.longitude;
+    }
+
+</script>
+
+    function showPosition(position){
+    var location=position.coords.latitude+","+position.coords.longitude; 
+    
+    var img_url="https://oapi.map.naver.com/openapi/v3/maps.js?center="+location+"ncpClientId=njovofn23o">
+    }
+    
+    <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=njovofn23o">
+        
+    </script>
+
+<div id="map" style="width:700px;height:400px;"></div>
+
+
+    
+<script>
+var mapOptions = {
+    center: new naver.maps.LatLng(37.3595704, 127.105399),
+    zoom: 10
+};
+
+var map = new naver.maps.Map('map', mapOptions);
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
