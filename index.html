@@ -4,14 +4,28 @@
     <meta charset="utf-8">
 <title> 점메추, 직장인 점심메뉴 룰렛 </title>
 </head>
+        
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 <body>
 <p>
 <h1> 오늘 점심은 뭘 먹을까? </h1>
 </p>
 
- <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=njovofn23o">
-     
- </script>
+    <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=njovofn23o">
+        
+    </script>
 
+<div id="map" style="width:100%;height:400px;"></div>
+
+<script>
+var mapOptions = {
+    center: new naver.maps.LatLng(37.3595704, 127.105399),
+    zoom: 10
+};
+
+var map = new naver.maps.Map('map', mapOptions);
+</script>
 </body>
 </html>
