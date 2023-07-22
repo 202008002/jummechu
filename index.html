@@ -18,7 +18,9 @@
 </p>
 <div id="map" style="width:500px;height:400px;"></div>
 
-<script>
+
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e39d7818fa41de98942eb619a2073e61">
+
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
     mapOption = { 
         center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
@@ -79,7 +81,6 @@ function displayMarker(locPosition, message) {
 </script>
 
 
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e39d7818fa41de98942eb619a2073e61"></script>
 
     
 </body>
