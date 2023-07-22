@@ -23,15 +23,10 @@
    
 
 <script>
-var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-    mapOption = { 
-        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-        level: 4 // 지도의 확대 레벨 
-    }; 
+
+
 
     
-// 지도를 생성합니다    
-var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 // HTML5의 geolocation으로 사용할 수 있는지 확인합니다 
 if (navigator.geolocation) {
     
@@ -52,14 +47,22 @@ if (navigator.geolocation) {
 
 
 
+var infowindow = new kakao.maps.InfoWindow({zIndex:1});
 
+var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+    mapOption = {
+        center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
+        level: 3 // 지도의 확대 레벨
+    };  
+
+// 지도를 생성합니다    
+var map = new kakao.maps.Map(mapContainer, mapOption); 
     
-   
 // 장소 검색 객체를 생성합니다
 var ps = new kakao.maps.services.Places(map); 
 
 // 카테고리로 은행을 검색합니다
-ps.categorySearch('BK9', placesSearchCB, {useMapBounds:true}); 
+ps.categorySearch('FD6', placesSearchCB, {useMapBounds:true}); 
 
 // 키워드 검색 완료 시 호출되는 콜백함수 입니다
 function placesSearchCB (data, status, pagination) {
